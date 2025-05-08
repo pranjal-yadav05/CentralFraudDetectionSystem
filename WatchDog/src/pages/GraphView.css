@@ -1,0 +1,122 @@
+.graph-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+}
+
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.graph-header h1 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.back-btn {
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.graph-info {
+  display: flex;
+  gap: 20px;
+}
+
+.graph-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.graph-legend {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 20px;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.legend-thickness {
+  display: inline-block;
+  height: 2px;
+  background-color: #999;
+  margin-right: 5px;
+}
+
+.control-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 20px 20px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.control-panel input[type="range"] {
+  cursor: pointer;
+}
+
+.graph-view {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+}
+
+.no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.node-tooltip {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  width: 200px;
+}
+
+.close-tooltip {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  border: none;
+  background: transparent;
+  font-size: 0.8rem;
+  cursor: pointer;
+}

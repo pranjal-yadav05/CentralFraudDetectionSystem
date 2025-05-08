@@ -1,0 +1,2 @@
+accountNumber,balance,betweenness,communityId,communitySize,cycleCount,fraudScore,freq,inDegree,intermediateAccount,is_suspicious,outDegree,pagerank,regularIntervalTransaction,suspicious,triangleCount,type,user
+ACC000642,53096.69,0.0009664506299713628,8,1008,0,24.74,30,9,45,False,5,0.00013887843956349129,True,False,0,CURRENT,User_642

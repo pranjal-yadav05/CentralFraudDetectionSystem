@@ -1,0 +1,405 @@
+.suspicious-transactions-container {
+  padding: 2rem;
+  padding-top: 5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+  font-family: "Segoe UI", "Roboto", sans-serif;
+}
+
+.dashboard-header {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0 24px;
+}
+
+.header-title {
+  flex: 1;
+}
+
+.header-title h1 {
+  color: #1e293b;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  color: #64748b;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.header-stats {
+  display: flex;
+  gap: 24px;
+  padding: 16px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.stat-label {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.stat-value.suspicious {
+  color: #dc2626;
+}
+
+/* Responsive adjustments for header */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header-stats {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .header-title h1 {
+    font-size: 24px;
+  }
+
+  .header-subtitle {
+    font-size: 14px;
+  }
+
+  .stat-item {
+    min-width: 100px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+}
+
+.transactions-table-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.transactions-table {
+  width: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  overflow: hidden;
+}
+
+.transactions-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transactions-table th {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #1e293b;
+  font-weight: 600;
+  text-align: left;
+  padding: 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.transactions-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+  font-size: 14px;
+}
+
+.transactions-table tr:last-child td {
+  border-bottom: none;
+}
+
+.transactions-table tr:hover {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.transaction-id {
+  font-family: monospace;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.transaction-amount {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.transaction-amount.positive {
+  color: #059669;
+}
+
+.transaction-amount.negative {
+  color: #dc2626;
+}
+
+.transaction-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-suspicious {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.status-normal {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  color: #059669;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.transaction-date {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.transaction-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.view-details-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.view-details-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.block-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+}
+
+.block-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(220, 38, 38, 0.3);
+}
+
+.action-button:active {
+  transform: translateY(0);
+}
+
+.no-transactions {
+  text-align: center;
+  padding: 48px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 32px auto;
+  max-width: 400px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.no-transactions i {
+  font-size: 48px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.no-transactions p {
+  color: #64748b;
+  font-size: 16px;
+  margin: 0;
+}
+
+.error {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  gap: 8px;
+  z-index: 1000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.error i {
+  font-size: 16px;
+  color: #dc2626;
+}
+
+.error p {
+  margin: 0;
+  font-size: 14px;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .transactions-table-container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .suspicious-transactions-container {
+    padding: 24px;
+  }
+
+  .header-content {
+    padding: 0 12px;
+  }
+
+  .header-title h1 {
+    font-size: 24px;
+  }
+
+  .header-subtitle {
+    font-size: 14px;
+  }
+
+  .transactions-table-container {
+    padding: 0 12px;
+  }
+
+  .transactions-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .suspicious-transactions-container {
+    padding: 16px;
+  }
+
+  .header-content {
+    padding: 0 8px;
+  }
+
+  .transactions-table-container {
+    padding: 0 8px;
+  }
+
+  .transaction-actions {
+    flex-direction: column;
+  }
+
+  .action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Column width adjustments to prevent overlapping */
+.transactions-table th:nth-child(5), /* Balance After Transaction column */
+.transactions-table td:nth-child(5) {
+  min-width: 160px;
+}
+
+.transactions-table th:nth-child(7), /* Status column */
+.transactions-table td:nth-child(7) {
+  min-width: 120px;
+}
+
+/* Ensure the description column can shrink if needed */
+.transactions-table th:nth-child(4), /* Description column */
+.transactions-table td:nth-child(4) {
+  max-width: 180px;
+  width: 20%;
+}
+
+/* Adjust Account Type column */
+.transactions-table th:nth-child(6), /* Account Type column */
+.transactions-table td:nth-child(6) {
+  width: 100px;
+}
+
+/* Adjust sender-receiver column */
+.transactions-table th:nth-child(1), /* Sender-Receiver column */
+.transactions-table td:nth-child(1) {
+  min-width: 150px;
+}
+
+/* Make amount column a bit narrower */
+.transactions-table th:nth-child(2), /* Amount column */
+.transactions-table td:nth-child(2) {
+  width: 100px;
+}
+
+/* Make date column fixed width */
+.transactions-table th:nth-child(3), /* Date column */
+.transactions-table td:nth-child(3) {
+  width: 150px;
+}
